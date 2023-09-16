@@ -37,7 +37,7 @@ export const Landing = () => {
         ratingLetter1: 'Happy customers',
         ratingLetter2: 'Amazing result'
     })
-    const [state, setState] = useState('generated');
+    const [state, setState] = useState('landing');
     return (
         <>
             {state === 'generated' ? <Generated param = {param} /> : (

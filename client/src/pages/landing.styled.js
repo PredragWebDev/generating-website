@@ -80,7 +80,6 @@ export const StyledBody = styled.div`
         }
 
         input#generate {
-            width: 50%;
             background: #FF006E;
             border: 1px solid;
             border-radius: 5px;
@@ -89,6 +88,45 @@ export const StyledBody = styled.div`
             padding: 10px;
         }
     }
+
+    @media (max-width: 700px) {
+
+        div#title {
+            margin-top: 50px;
+
+            img {
+                display: none;
+            }
+        }
+
+        div#subscription {
+
+            padding: 20px;
+            margin-top: 35px;
+            p {
+                font-size: 20px;
+            }
+        }
+
+        div#container {
+            height: 300px;
+
+            margin-top: 30px;
+            padding: 20px;
+
+            input#idea {
+                font-size: 15px;
+                padding: 10px;
+            }
+
+            input#generate {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+    }
+
+
 
 
 
