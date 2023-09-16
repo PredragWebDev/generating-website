@@ -1,0 +1,66 @@
+name: CI/CD
+
+env:
+  APP_NAME: 'trading-dev'
+  SERVER_NAME: 'server'
+  CLIENT_NAME: 'client'
+  RELEASE_PATH: /root/NaijaTrading-dev
+  SERVER_RELEASE_PATH: /root/NaijaTrading-dev/server
+  CLIENT_RELEASE_PATH: /root/NaijaTrading-dev/client  
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Transfer files to server
+      uses: appleboy/scp-action@master
+      with:
+        host: 65.108.20.32
+        username: root
+        KEY: ${{ secrets.SSHKEY }}
+        source: '.,!./uploads'
+        target: ${{ env.RELEASE_PATH }}
+
+    - name: Install dependencies
+      uses: appleboy/ssh-action@master
+      with:
+          host: 65.108.20.32
+          username: root
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            sudo apt-get update
+            sudo apt-get install nodejs npm
+            cd ${{ env.RELEASE_PATH }}/client 
+            sudo npm install
+            yarn build
+            cd ${{ env.RELEASE_PATH }}/server
+            npm install pm2 -g
+            pm2 delete all
+            pm2 start ecosystem.config.js
+            
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: 65.108.20.32
+        username: root
+        KEY: ${{ secrets.SSHKEY }}
+        prot: 22
+        script: |
+          cp -r ${{ env.RELEASE_PATH }}/client/build/* /var/www/html/react/
+          systemctl restart nginx
+          
+          
