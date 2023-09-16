@@ -113,7 +113,7 @@ export const Generated = (props) => {
                     <StyledJoiningFeedback>
                         <div>
                             <h1>{props.param.subtitle1}</h1>
-                            <p>"{props.param.subcontent1}"</p>
+                            <p>"{props.param.subcontent1}" - {props.param.user3}</p>
 
                             <StyledJoinForm className="lastform">
                                 <input type="text" id="email" name="email" placeholder="Enter your email..." autoFocus autoComplete="false" required></input>

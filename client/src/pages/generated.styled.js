@@ -1,5 +1,27 @@
 import styled from 'styled-components';
 
+export const StyledLogo = styled.div`
+
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 32px;
+        height: 32px;
+
+        margin-right: 10px;
+    }
+
+    p {
+        color: black;
+        font-weight: 700;
+        font-size: 20px;
+        font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+        line-height: 2rem;
+        margin: 0px;
+    }
+`
+
 export const StyledSubtitle = styled.div`
 
     display: flex;
@@ -38,27 +60,39 @@ export const StyledSubtitle = styled.div`
         }
     }
     
-`
+    @media (max-width: 700px) {
+        
+        display: grid;
 
-export const StyledLogo = styled.div`
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 3.2rem;
+        }
 
-    display: flex;
-    align-items: center;
+        p {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity));
+            margin-top: 1.5rem;
+            font-size: 18px;
+            line-height: 25px;
+        }
 
-    img {
-        width: 32px;
-        height: 32px;
+        div#title {
+            width: 100%;
+            align-items: center;
+            display: flex;
+        }
 
-        margin-right: 10px;
-    }
+        div#image {
+            width: 100%;
+            padding: 30px;
 
-    p {
-        color: black;
-        font-weight: 700;
-        font-size: 20px;
-        font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
-        line-height: 2rem;
-        margin: 0px;
+            img {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
     }
 `
 
@@ -153,6 +187,20 @@ export const StyledRatingForm = styled.div`
         --tw-text-opacity: 1;
         color: rgb(250 204 21 / var(--tw-text-opacity));
     }
+
+    @media (max-width: 700px) {
+        p#review {
+            font-weight: 800;
+            letter-spacing: -.025em;
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        p#name {
+            font-weight: 600;
+            font-size: 17px;
+        }
+    }
 `
 export const StyledFeedBack = styled.div`
     background: #FF6AB1;
@@ -183,6 +231,19 @@ export const StyledFeedBack = styled.div`
         margin: 0px;
     }
 
+    @media (max-width: 700px) {
+        div#feedback2 {
+            padding: 25px 50px;
+    
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 28px;
+            text-align: center;
+        }
+    
+    }
 
 `
 
@@ -213,6 +274,27 @@ export const StyledJoiningFeedback = styled.div`
         line-height: 30px;
         text-align: center;
     }
+
+    @media (max-width: 700px) {
+        margin-top: 3rem;
+        padding-top: 5rem;
+
+        div {
+            padding: 25px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 3.2rem;
+        }
+    
+        p {
+            font-size: 18px;
+            font-style: italic;
+            line-height: 25px;
+        }
+    }
 `
 
 export const StyledFooter = styled.div`
@@ -222,5 +304,9 @@ export const StyledFooter = styled.div`
     padding: 150px;
 
     text-align: center;
+
+    @media (max-width: 700px) {
+        padding:50px;
+    }
 
 `
