@@ -3,14 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
-    let navigate = useNavigate();
 
     const submit = async (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
             axios({
                 method: "post",
-                url: `${process.env.REACT_APP_SERVER_URL}/login`,
+                url: `${process.env.REACT_APP_SERVER_URL}/getContent`,
                 data: data,
                 headers: { "Content-Type": "multipart/form-data" },
               })
@@ -20,8 +19,7 @@ const Form = () => {
                 if(response.data["state"]){
 
                     console.log(response.data);
-                    console.log("username>>>>>>>>>>", response.data["username"]);
-                    navigate(`/mainpage/${response.data["username"]}`);
+                    
                 }
                 else{
                     // setError(response.data["smg"]);
