@@ -28,11 +28,13 @@ const Form = (props) => {
             }
             else{
                 // setError(response.data["smg"]);
+                props.setState('landing');
             }
         
         }).catch((error) => {
             if (error.response) {
                 alert(error);
+                props.setState('landing');
                 console.log("error~~~~~~~~~")
                 console.log(error.response)
                 console.log(error.response.status)

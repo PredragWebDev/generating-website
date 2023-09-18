@@ -181,7 +181,7 @@ export const Landing = () => {
                                 <p>Type in your prompt to get the website you want!</p>
                             </div>
                             <div id="container">
-                                {state === 'landing' && (<Form setParams = {setContent} setStart = {setStart} setIsResponseChatgpt = {setIsResponseChatgpt}/>)}
+                                {state === 'landing' && (<Form setParams = {setContent} setStart = {setStart} setIsResponseChatgpt = {setIsResponseChatgpt} setState = {setState}/>)}
                                 {state === 'connecting' && (<Connecting/>)}
                                 {state === 'submitting' && (<Submitting/>)}
                                 {state === 'generating' && <Generating/>}

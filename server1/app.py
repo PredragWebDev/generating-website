@@ -5,7 +5,7 @@ import requests
 import openai
 import json
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 blueprint = Blueprint(
     'Content_blueprint',
@@ -15,13 +15,17 @@ blueprint = Blueprint(
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}},  supports_credentials=True)
+# CORS(app)
+# CORS(blueprint)
 
 @app.route('/')
+# @blueprint.route('/')
 def hello():
     return 'Hello, World!'
 
 @app.route('/api/getContent', methods = ['GET', 'POST'])
+# @blueprint.route('/api/getContent', methods = ['GET', 'POST'])
 def getContent():
 
     idea = request.form['idea']
@@ -52,6 +56,7 @@ def getResponseFrom_ChatGPT(idea):
     return content_for_idea
 
 @app.route('/api/getImage', methods=['GET','POST'])
+# @blueprint.route('/api/getImage', methods=['GET','POST'])
 def getImage():
 
     data = request.json
