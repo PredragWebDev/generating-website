@@ -145,15 +145,12 @@ export const Landing = () => {
                 
                 setState('designing');
                 
-                getLogo();
             }, 4000);
             
+            setTimeout(() => {
+                setState('generating');
+            }, 6000);
             setStart(false);
-        }
-
-        if (deisgned) {
-            setState('generating');
-            setDesigned(false);
         }
 
         if (isResponseChatgpt) {
@@ -178,7 +175,7 @@ export const Landing = () => {
                     <div id="mainboard">
                         <div id="title">
                             <img src="./img/logo.png" alt="logo"/>
-                            <h1>Bear.AI</h1>
+                            <h1>Boba.AI</h1>
                         </div>
                             <div id="subscription">
                                 <p>Type in your prompt to get the website you want!</p>

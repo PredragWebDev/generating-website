@@ -79,13 +79,24 @@ export const StyledBody = styled.div`
             text-align: center;
         }
 
-        input#generate {
-            background: #FF006E;
+        button#create {
+            background: #4472C4;
             border: 1px solid;
-            border-radius: 5px;
+            border-radius: 10px;
             color: #FFFFFF;
             font-size: 20px;
-            padding: 10px;
+            font-weight:800;
+            padding: 10px 30px;
+
+            &: hover {
+                background: #FFCCFF;
+                color: blue;
+            }
+
+            img {
+                width: 50px;
+                margin-right: 20px;
+            }
         }
     }
 

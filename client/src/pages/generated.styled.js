@@ -2,23 +2,40 @@ import styled from 'styled-components';
 
 export const StyledLogo = styled.div`
 
-    display: flex;
+    width: 100%;
     align-items: center;
-
-    img {
-        width: 32px;
-        height: 32px;
-
-        margin-right: 10px;
+    margin-bottom: 60px;
+    div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
-    p {
+    img {
+        width: 20%;
+
+        margin-right: 10px;
+        margin-bottom: 30px;
+    }
+
+    p#logo {
         color: black;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 60px;
         font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
         line-height: 2rem;
         margin: 0px;
+    }
+
+    @media (max-width: 700px) {
+        p#logo {
+            color: black;
+            font-weight: 700;
+            font-size: 40px;
+            font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+            line-height: 2rem;
+            margin: 0px;
+        }
     }
 `
 
@@ -48,15 +65,19 @@ export const StyledSubtitle = styled.div`
 
         align-items: center;
         display: flex;
+        padding: 30px;
     }
 
     div#image {
+        display: grid;
         width:50%;
         padding: 30px;
 
+        align-items: center;
+
         img {
             width: 100%;
-            max-height: 90vh;
+            max-height: 55vh;
             border-radius: 20px;
         }
     }
@@ -86,17 +107,59 @@ export const StyledSubtitle = styled.div`
         }
 
         div#image {
+            display: grid;
             width: 100%;
             padding: 30px;
 
             img {
                 width: 100%;
                 border-radius: 20px;
+                max-height: 55vh;
             }
         }
     }
 `
+export const StyledSocialIcon = styled.div`
+    display: grid;
+    align-items: center;
 
+    margin-bottom: 30px;
+
+    img#social {
+        width: 20% !important;
+    }
+
+    div#top {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    
+    div#bottom {
+        display: none;
+    }
+
+    @media (max-width: 700px) {
+
+        div#top {
+            display: none;
+        }
+
+        div#bottom {
+            display: grid;
+            div#social_icons {
+                display: flex;
+                justify-content:space-around;
+            }
+
+            div#bottom_logo {
+                display: flex;
+                justify-content: center;
+            }
+            justify-content: space-around;
+        }
+    }
+`
 export const StyledJoinForm = styled.form`
     align-items: center;
     display: flex;
@@ -250,7 +313,6 @@ export const StyledFeedBack = styled.div`
 
 export const StyledJoiningFeedback = styled.div`
 
-    display: flex;
     margin-top: 6rem;
     padding-top: 10rem;
 
@@ -299,14 +361,51 @@ export const StyledJoiningFeedback = styled.div`
 `
 
 export const StyledFooter = styled.div`
+
+    display: flex;
+    justify-content: center;
     margin-top: 70px;
     border-top: 1px solid grey;
 
     padding: 150px;
 
-    text-align: center;
+    p {
+        color: black;
+    }
+    img#rocket {
+        width: 30px;
+        margin-left: 15px;
+    }
+    
+    p#title {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 20px;
+    }
+
+    p#content {
+        font-size: 20px;
+    }
+
 
     @media (max-width: 700px) {
+        img {
+            width: 30px;
+            margin-right: 15px;
+        }
+
+        p#title {
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        p#content {
+            font-size: 15px;
+        }
+
         padding:50px;
     }
 
@@ -327,5 +426,9 @@ export const StyledRenewButton = styled.button`
     &:hover {
         background-color: #333;
         color:#fff;
+    }
+
+    @media (max-width: 700px) {
+        display: none;
     }
 `

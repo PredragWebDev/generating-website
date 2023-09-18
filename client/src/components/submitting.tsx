@@ -4,8 +4,12 @@ import ReactLoading from 'react-loading';
 const Submitting = () => {
     return (
         <StyledLoading>
-            <ReactLoading type={'spinningBubbles'} color={'#777777'} />
-            <h1 id="submitting"> Submitting subscription...</h1>
+            <div id='loading'>
+                <img src="./img/bottom_logo.png" alt="loading"/>
+            </div>
+            <div id="text">
+                <h1 id="designing"> Submitting subscription...</h1>
+            </div>
         </StyledLoading>
     )
 }

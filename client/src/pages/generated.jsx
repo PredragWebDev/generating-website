@@ -1,9 +1,10 @@
 import "./index.css";
 
 import { Rating } from 'primereact/rating';
-import { useState } from "react";
+
+// import { useState } from "react";
 // import { StyledBody } from "./gene.styled";
-import {StyledAvatar, StyledLogo, StyledSubtitle, StyledJoinForm, StyledRatingForm, StyledFeedBack, StyledJoiningFeedback, StyledFooter, StyledRenewButton } from "./generated.styled";
+import {StyledAvatar, StyledLogo, StyledSubtitle, StyledJoinForm, StyledRatingForm, StyledFeedBack, StyledJoiningFeedback, StyledFooter, StyledRenewButton, StyledSocialIcon } from "./generated.styled";
 
 export const Generated = (props) => {
 
@@ -15,21 +16,26 @@ export const Generated = (props) => {
         <div className="background">
             <div className="title">
                 <img className="logoImage" src="./img/logo.png" alt="logo"/>
-                <h1>Bear.AI</h1>
+                <h1>Babo.AI</h1>
                 <StyledRenewButton onClick={renew}>
                     renew
                 </StyledRenewButton>
             </div>
             <div className="container">
                 <div className="generated">
-                    <StyledLogo>
-                        <img src={props.logo} alt="logo"/>
-                        <p>{JSON.parse(props.content).title}</p>
-                    </StyledLogo>
 
                     <StyledSubtitle>
                         <div id="title">
                             <div>
+                                <StyledLogo>
+                                    <div id="custom_log">
+                                        <img src='./img/custom_logo.png' alt="logo"/>
+                                    </div>
+                                    <div id="custom_title">
+                                        <p id="logo">{JSON.parse(props.content).title}</p>
+                                    </div>
+                                </StyledLogo>
+
                                 <h1>{JSON.parse(props.content).subtitle1}</h1>
                                 <p>{JSON.parse(props.content).subcontent1}</p>
 
@@ -59,7 +65,16 @@ export const Generated = (props) => {
                             </div>
                         </div>
                         <div id="image">
-                            <img src={props.images[0]} alt="image1"/>
+                            <StyledSocialIcon>
+                                <div id="top">
+                                    <img id="social" src="./img/instagram.png" alt="instagram" />
+                                    <img id = 'social' src="./img/social2.png" alt="social2" />
+                                    <img id = 'social' src="./img/social3.png" alt="social3"/>
+                                </div>
+                            </StyledSocialIcon>
+                            <div>
+                                <img src={props.images[0]} alt="image1"/>
+                            </div>
                         </div>
                     </StyledSubtitle>
 
@@ -127,10 +142,49 @@ export const Generated = (props) => {
                                 <input tabIndex={3} id="join" name="join" type="submit" value={"Join now"} ></input>
                             </StyledJoinForm>
                         </div>
+                        <StyledSocialIcon >
+                            <div id="bottom">
+                                <div id="social_icons">
+                                    <img id="social" src="./img/instagram.png" alt="instagram" />
+                                    <img id = 'social' src="./img/social2.png" alt="social2" />
+                                    <img id = 'social' src="./img/social3.png" alt="social3"/>
+                                </div>
+                                <p>Powered by Boba AI Website Generator</p>
+                                <div id="bottom_logo">
+                                    <img src="./img/bottom_logo.png" alt="bottom logo"/>
+                                </div>
+                            </div>
+                        </StyledSocialIcon>
                     </StyledJoiningFeedback>
 
                     <StyledFooter>
-                        © All rights reserved.
+                        <div id="content">
+
+                            <p id="title">
+                                Features that will be included in Boba AI
+                                <img id='rocket' src="./img/rocket.png" alt="rocket"/>
+                            </p>
+                            <p id="content">
+                                <img src="./img/bottom_logo.png" alt="logo" />
+                                Custom AI video generation
+                            </p>
+                            <p id="content">
+                                <img src="./img/bottom_logo.png" alt="logo" />
+                                Decentralized Website hosting
+                            </p>
+                            <p id="content">
+                                <img src="./img/bottom_logo.png" alt="logo" />
+                                Generate Multiple Pages
+                            </p>
+                            <p id="content">
+                                <img src="./img/bottom_logo.png" alt="logo" />
+                                SSL Certificate
+                            </p>
+                            <p id="content">
+                                <img src="./img/bottom_logo.png" alt="logo" />
+                                SEO Optimized content
+                            </p>
+                        </div>
                     </StyledFooter>
 
                 </div>

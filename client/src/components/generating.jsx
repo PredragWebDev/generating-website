@@ -5,8 +5,12 @@ const Generating = () => {
     
     return (
         <StyledLoading>
-            <h1 id="submitting"> Generating content</h1>
-            <ReactLoading type={'balls'} color={'#777777'} />
+            <div id='loading'>
+                <img src="./img/bottom_logo.png" alt="loading"/>
+            </div>
+            <div id="text">
+                <h1 id="designing"> Generating content...</h1>
+            </div>
         </StyledLoading>
     )
 }

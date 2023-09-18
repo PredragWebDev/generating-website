@@ -4,8 +4,12 @@ import ReactLoading from 'react-loading';
 const Designing = () => {
     return (
         <StyledLoading>
-            <h1 id="designing"> Designing Logo</h1>
-            <ReactLoading type={'cubes'} color={'#777777'} />
+            <div id='loading'>
+                <img src="./img/bottom_logo.png" alt="loading"/>
+            </div>
+            <div id="text">
+                <h1 id="designing"> Designing Logo...</h1>
+            </div>
         </StyledLoading>
     )
 }
