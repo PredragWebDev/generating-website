@@ -23,7 +23,6 @@ export const Generated = (props) => {
             </div>
             <div className="container">
                 <div className="generated">
-
                     <StyledSubtitle>
                         <div id="title">
                             <div>
