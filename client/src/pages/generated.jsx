@@ -3,29 +3,35 @@ import "./index.css";
 import { Rating } from 'primereact/rating';
 import { useState } from "react";
 // import { StyledBody } from "./gene.styled";
-import {StyledAvatar, StyledLogo, StyledSubtitle, StyledJoinForm, StyledRatingForm, StyledFeedBack, StyledJoiningFeedback, StyledFooter } from "./generated.styled";
+import {StyledAvatar, StyledLogo, StyledSubtitle, StyledJoinForm, StyledRatingForm, StyledFeedBack, StyledJoiningFeedback, StyledFooter, StyledRenewButton } from "./generated.styled";
 
 export const Generated = (props) => {
 
-    const [state, setState] = useState('generating');
+    const renew = () => {
+        props.setState('landing');
+    }
+    
     return (
         <div className="background">
             <div className="title">
                 <img className="logoImage" src="./img/logo.png" alt="logo"/>
                 <h1>Bear.AI</h1>
+                <StyledRenewButton onClick={renew}>
+                    renew
+                </StyledRenewButton>
             </div>
             <div className="container">
                 <div className="generated">
                     <StyledLogo>
-                        <img src={props.param.logo} alt="logo"/>
-                        <p>{props.param.title}</p>
+                        <img src={props.logo} alt="logo"/>
+                        <p>{JSON.parse(props.content).title}</p>
                     </StyledLogo>
 
                     <StyledSubtitle>
                         <div id="title">
                             <div>
-                                <h1>{props.param.subtitle1}</h1>
-                                <p>{props.param.subcontent1}</p>
+                                <h1>{JSON.parse(props.content).subtitle1}</h1>
+                                <p>{JSON.parse(props.content).subcontent1}</p>
 
                                 <StyledJoinForm>
                                     <input type="text" id="email" name="email" placeholder="Enter your email..." autoFocus autoComplete="false" required></input>
@@ -36,36 +42,36 @@ export const Generated = (props) => {
                                 <StyledRatingForm>
                                     <div id="rating">
                                         <Rating className="rating" value={5} readOnly cancel={false} />
-                                        <p id="letter">{props.param.ratingLetter1}</p>
-                                        <p id="letter">{props.param.ratingLetter2}</p>
+                                        <p id="letter">{JSON.parse(props.content).ratingLetter1}</p>
+                                        <p id="letter">{JSON.parse(props.content).ratingLetter2}</p>
                                     </div>
                                     <div id="feedback">
                                         <div id="avatar">
                                             {/* <img id='avatar' src={props.param.user1_image} alt="user1"/> */}
-                                            <StyledAvatar src={props.param.user1_image} alt="user1"/>
+                                            <StyledAvatar src={props.avatar[0]} alt="user1"/>
                                         </div>
                                         <div id="review">
-                                            <p id="review">"{props.param.feedback1}"</p>
-                                            <p id="name">{props.param.user1}</p>
+                                            <p id="review">"{JSON.parse(props.content).feedback1}"</p>
+                                            <p id="name">{JSON.parse(props.content).username1}</p>
                                         </div>
                                     </div>
                                 </StyledRatingForm>
                             </div>
                         </div>
                         <div id="image">
-                            <img src={props.param.image1} alt="image1"/>
+                            <img src={props.images[0]} alt="image1"/>
                         </div>
                     </StyledSubtitle>
 
                     <StyledSubtitle>
                         <div id="image">
-                            <img src={props.param.image2} alt="image1"/>
+                            <img src={props.images[1]} alt="image1"/>
                         </div>
 
                         <div id="title">
                             <div>
-                                <h1>{props.param.subtitle2}</h1>
-                                <p>{props.param.subcontent2}</p>
+                                <h1>{JSON.parse(props.content).subtitle2}</h1>
+                                <p>{JSON.parse(props.content).subcontent2}</p>
                             </div>
                         </div>
                         
@@ -75,25 +81,25 @@ export const Generated = (props) => {
                         
                         <div id="title">
                             <div>
-                                <h1>{props.param.subtitle3}</h1>
-                                <p>{props.param.subcontent3}</p>
+                                <h1>{JSON.parse(props.content).subtitle3}</h1>
+                                <p>{JSON.parse(props.content).subcontent3}</p>
                             </div>
                         </div>
                         
                         <div id="image">
-                            <img src={props.param.image3} alt="image1"/>
+                            <img src={props.images[2]} alt="image1"/>
                         </div>
                     </StyledSubtitle>
 
                     <StyledSubtitle>
                         <div id="image">
-                            <img src={props.param.image4} alt="image1"/>
+                            <img src={props.images[3]} alt="image1"/>
                         </div>
 
                         <div id="title">
                             <div>
-                                <h1>{props.param.subtitle4}</h1>
-                                <p>{props.param.subcontent4}</p>
+                                <h1>{JSON.parse(props.content).subtitle4}</h1>
+                                <p>{JSON.parse(props.content).subcontent4}</p>
                             </div>
                         </div>
                         
@@ -101,19 +107,19 @@ export const Generated = (props) => {
 
                     <StyledFeedBack>
                         <div id="feedback2">
-                            <h1>"{props.param.feedback2}"</h1>
+                            <h1>"{JSON.parse(props.content).feedback2}"</h1>
                             <div id="avatar">
-                                <StyledAvatar src={props.param.user2_image} alt="user2"/>
+                                <StyledAvatar src={props.avatar[1]} alt="user2"/>
                                 {/* <img src={props.param.user2_image} alt="user2"/> */}
-                                <p>{props.param.user2}</p>
+                                <p>{JSON.parse(props.content).username2}</p>
                             </div>
                         </div>
                     </StyledFeedBack>       
 
                     <StyledJoiningFeedback>
                         <div>
-                            <h1>{props.param.subtitle1}</h1>
-                            <p>"{props.param.subcontent1}" - {props.param.user3}</p>
+                            <h1>{JSON.parse(props.content).subtitle}</h1>
+                            <p>"{JSON.parse(props.content).feedback3}" - {JSON.parse(props.content).username3}</p>
 
                             <StyledJoinForm className="lastform">
                                 <input type="text" id="email" name="email" placeholder="Enter your email..." autoFocus autoComplete="false" required></input>

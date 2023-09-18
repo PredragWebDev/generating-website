@@ -56,6 +56,7 @@ export const StyledSubtitle = styled.div`
 
         img {
             width: 100%;
+            max-height: 90vh;
             border-radius: 20px;
         }
     }
@@ -309,4 +310,17 @@ export const StyledFooter = styled.div`
         padding:50px;
     }
 
+`
+
+export const StyledRenewButton = styled.button`
+    position: absolute;
+    left: 90%;
+    background: #FF6AB1;
+    border: 1px solid;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-top: 100px;
+    padding: 10px;
+    text-transform: uppercase;
 `

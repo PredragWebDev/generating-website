@@ -1,39 +1,44 @@
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 
-
-const Form = () => {
+const Form = (props) => {
 
     const submit = async (e) => {
         e.preventDefault();
+        props.setStart(true);
         const data = new FormData(e.target);
-            axios({
-                method: "post",
-                url: `${process.env.REACT_APP_SERVER_URL}/getContent`,
-                data: data,
-                headers: { "Content-Type": "multipart/form-data" },
-              })
-              .then((response) => {
-                
-                console.log(response.data["state"]);
-                if(response.data["state"]){
 
-                    console.log(response.data);
-                    
-                }
-                else{
-                    // setError(response.data["smg"]);
-                }
-                
-              }).catch((error) => {
-                if (error.response) {
-                    alert(error);
-                    console.log("error~~~~~~~~~")
-                    console.log(error.response)
-                    console.log(error.response.status)
-                    console.log(error.response.headers)
-                  }
-              })
+        console.log('data>>>>', data.entries());
+
+        props.setParams({idea:data['idea']});
+
+        axios({
+            method: "post",
+            url: `${process.env.REACT_APP_SERVER_URL}/getContent`,
+            data: data,
+            headers: { "Content-Type": "multipart/form-data" },
+            })
+        .then((response) => {
+        
+        // console.log(response.data["state"]);
+            if(response.data["state"]){
+
+                console.log("response>>>>>>>>",response.data['response']);
+                props.setParams(response.data['response']);
+                props.setIsResponseChatgpt(true);
+            }
+            else{
+                // setError(response.data["smg"]);
+            }
+        
+        }).catch((error) => {
+            if (error.response) {
+                alert(error);
+                console.log("error~~~~~~~~~")
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            }
+        })
     }
 
     return (
