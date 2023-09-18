@@ -1,9 +1,13 @@
+import ReactLoading from 'react-loading';
+import { StyledLoading } from './loading.styled';
 
 const Generating = () => {
+    
     return (
-        <div>
-            <h1 id="submitting"> Generating site code...</h1>
-        </div>
+        <StyledLoading>
+            <h1 id="submitting"> Generating content</h1>
+            <ReactLoading type={'balls'} color={'#777777'} />
+        </StyledLoading>
     )
 }
 

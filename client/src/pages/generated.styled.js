@@ -323,4 +323,9 @@ export const StyledRenewButton = styled.button`
     margin-top: 100px;
     padding: 10px;
     text-transform: uppercase;
+
+    &:hover {
+        background-color: #333;
+        color:#fff;
+    }
 `

@@ -1,9 +1,12 @@
+import { StyledLoading } from "./loading.styled";
+import ReactLoading from 'react-loading';
 
 const Submitting = () => {
     return (
-        <div>
+        <StyledLoading>
+            <ReactLoading type={'spinningBubbles'} color={'#777777'} />
             <h1 id="submitting"> Submitting subscription...</h1>
-        </div>
+        </StyledLoading>
     )
 }
 

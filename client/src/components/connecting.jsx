@@ -1,9 +1,12 @@
+import { StyledLoading } from "./loading.styled";
+import ReactLoading from 'react-loading';
 
 const Connecting = () => {
     return (
-        <div>
+        <StyledLoading>
+            <ReactLoading type={'cylon'} color={'#777777'} />
             <h1 id="loading"> Connecting to AI...</h1>
-        </div>
+        </StyledLoading>
 
     )
 }
