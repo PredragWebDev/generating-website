@@ -1,6 +1,7 @@
 import "./index.css";
 
 import { Rating } from 'primereact/rating';
+import {useState, useEffect} from 'react';
 
 // import { useState } from "react";
 // import { StyledBody } from "./gene.styled";
@@ -8,9 +9,32 @@ import {StyledAvatar, StyledLogo, StyledSubtitle, StyledJoinForm, StyledRatingFo
 
 export const Generated = (props) => {
 
+    const [logo_url, setLogo_url] = useState('initialState')
     const renew = () => {
         props.setState('landing');
     }
+
+    useEffect(() => {
+        const logo = Math.floor(Math.random * 4 + 1);
+        
+        switch (logo) {
+            case 1:
+                setLogo_url("./img/logo.svg");
+                break;
+            case 2:
+                setLogo_url("./img/logo2.svg");
+                break;
+            case 3:
+                setLogo_url("/img/logo3.svg");
+                break;
+            case 4:
+                setLogo_url("/img/custom_logo.png");
+                break;
+            default:
+                setLogo_url("./img/logo.svg");
+                break;
+        }
+    }, [])
     
     return (
         <div className="background">
@@ -28,7 +52,7 @@ export const Generated = (props) => {
                             <div>
                                 <StyledLogo>
                                     <div id="custom_log">
-                                        <img src='./img/custom_logo.png' alt="logo"/>
+                                        <img src={logo_url} alt="logo"/>
                                     </div>
                                     <div id="custom_title">
                                         <p id="logo">{JSON.parse(props.content).title}</p>

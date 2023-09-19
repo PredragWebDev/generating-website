@@ -30,6 +30,7 @@ def hello():
 # @blueprint.route('/api/getContent', methods = ['GET', 'POST'])
 def getContent():
 
+    print("api key", os.getenv('OPENAI_APIKEY'))
     idea = request.form['idea']
 
     # print('idea>>>>', idea)
