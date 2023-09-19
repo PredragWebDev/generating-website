@@ -1,4 +1,3 @@
-import ReactLoading from 'react-loading';
 import { StyledLoading } from './loading.styled';
 
 const Generating = () => {

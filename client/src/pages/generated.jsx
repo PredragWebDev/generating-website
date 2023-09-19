@@ -16,7 +16,7 @@ export const Generated = (props) => {
         <div className="background">
             <div className="title">
                 <img className="logoImage" src="./img/logo.png" alt="logo"/>
-                <h1>Babo.AI</h1>
+                <h1>Boba.AI</h1>
                 <StyledRenewButton onClick={renew}>
                     renew
                 </StyledRenewButton>

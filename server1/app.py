@@ -5,7 +5,7 @@ import requests
 import openai
 import json
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 blueprint = Blueprint(
     'Content_blueprint',

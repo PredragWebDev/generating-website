@@ -125,18 +125,21 @@ export const StyledSocialIcon = styled.div`
 
     margin-bottom: 30px;
 
-    img#social {
-        width: 20% !important;
-    }
+    
 
     div#top {
         display: flex;
         justify-content: space-around;
+
+        img#social {
+            width: 10% !important;
+        }
     }
 
     
     div#bottom {
         display: none;
+
     }
 
     @media (max-width: 700px) {
@@ -152,6 +155,9 @@ export const StyledSocialIcon = styled.div`
                 justify-content:space-around;
             }
 
+            img#social {
+                width: 20% !important;
+            }
             div#bottom_logo {
                 display: flex;
                 justify-content: center;

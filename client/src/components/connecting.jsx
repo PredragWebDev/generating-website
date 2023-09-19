@@ -1,5 +1,4 @@
 import { StyledLoading } from "./loading.styled";
-import ReactLoading from 'react-loading';
 
 const Connecting = () => {
     return (
