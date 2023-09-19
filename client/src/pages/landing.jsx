@@ -14,7 +14,7 @@ export const Landing = () => {
     const [isResponseChatgpt, setIsResponseChatgpt] = useState(false);
     const [start, setStart] = useState(false);
     const [state, setState] = useState('landing');
-    const [deisgned, setDesigned] = useState(false);
+    // const [deisgned, setDesigned] = useState(false);
     const [collected, setCollected] = useState(false);
     // const [search_query, setSearch_query] = useState('')
     const [content,setContent ] = useState({
@@ -46,7 +46,7 @@ export const Landing = () => {
     const [images, setImages] = useState(["https://images.unsplash.com/photo-1562805783-6d2958a7cfb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQ4NzA1Mjd8&ixlib=rb-4.0.3&q=80&w=1080", "https://images.unsplash.com/photo-1498618480317-92f84893b69e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQ4NzA1Mjd8&ixlib=rb-4.0.3&q=80&w=1080", "https://images.unsplash.com/photo-1508219803418-5f1f89469b50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQ4NzA1Mjd8&ixlib=rb-4.0.3&q=80&w=1080",
     "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMzczODV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQ4NzA1Mjd8&ixlib=rb-4.0.3&q=80&w=1080",]);
 
-    const [logo, setLogo] = useState('https://storage.googleapis.com/mixo-files/logos/partnerConnect-1694855881637.svg',);
+    // const [logo, setLogo] = useState('https://storage.googleapis.com/mixo-files/logos/partnerConnect-1694855881637.svg',);
 
     const [avatar, setAvatar] = useState(['https://storage.googleapis.com/mixo-files/public/img/avatars/female-3.png', 'https://storage.googleapis.com/mixo-files/public/img/avatars/female-5.png',]);
 
@@ -86,36 +86,36 @@ export const Landing = () => {
         })
     }
 
-    const getLogo = async (idea) => {
-        axios({
-            method: "post",
-            url: `${process.env.REACT_APP_SERVER_URL}/getLogo`,
-            data: {idea:idea},
-            headers: { "Content-Type": "application/json" },
-            })
-        .then((response) => {
+    // const getLogo = async (idea) => {
+    //     axios({
+    //         method: "post",
+    //         url: `${process.env.REACT_APP_SERVER_URL}/getLogo`,
+    //         data: {idea:idea},
+    //         headers: { "Content-Type": "application/json" },
+    //         })
+    //     .then((response) => {
         
-            if(response.data["state"]){
-                console.log('Logo okay');
-                setLogo(response.data['logo']);
-                setDesigned(true);
+    //         if(response.data["state"]){
+    //             console.log('Logo okay');
+    //             setLogo(response.data['logo']);
+    //             setDesigned(true);
 
-            }
-            else{
-                setState('landing');
-            }
+    //         }
+    //         else{
+    //             setState('landing');
+    //         }
         
-        }).catch((error) => {
-            if (error.response) {
-                alert(error);
-                setState('landing');
-                console.log("error~~~~~~~~~")
-                console.log(error.response)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            }
-        })
-    }
+    //     }).catch((error) => {
+    //         if (error.response) {
+    //             alert(error);
+    //             setState('landing');
+    //             console.log("error~~~~~~~~~")
+    //             console.log(error.response)
+    //             console.log(error.response.status)
+    //             console.log(error.response.headers)
+    //         }
+    //     })
+    // }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const getAvatar = () => {
@@ -167,10 +167,10 @@ export const Landing = () => {
         }
  
         // console.log("params>>>>>", content);
-    }, [start, isResponseChatgpt, content, deisgned, collected, getImage, getAvatar]);
+    }, [start, isResponseChatgpt, content, collected, getImage, getAvatar]);
     return (
         <>
-            {state === 'generated' ? <Generated content = {content} images = {images} logo = {logo} avatar = {avatar} setState = {setState}/> : (
+            {state === 'generated' ? <Generated content = {content} images = {images} avatar = {avatar} setState = {setState}/> : (
                 <StyledBody>
                     <div id="mainboard">
                         <div id="title">
