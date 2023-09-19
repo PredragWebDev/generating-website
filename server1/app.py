@@ -5,7 +5,7 @@ import requests
 import openai
 import json
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 blueprint = Blueprint(
     'Content_blueprint',
@@ -40,7 +40,7 @@ def getContent():
 
 def getResponseFrom_ChatGPT(idea):
 
-    prompt = f"I want to create a website that people meet their partner. Provide a title of website and 4 subtitle and their content for website. Also, provide 2 example user's simple feedbacks, usernames(real name) and sex(low case) about the website I built. And I want to get the images from api.unsplash.com. Provide the search query for this. And provide the subtitle, feedback and its username(real name) that encourage to join community.  Provide the result as following Json format: [title:"", subtitle1:"", subcontent1:"", subtitl2:"", subcontent2:"", subtitle3:"", subcontent3:"", subtitle4:"", subcontent4:"", feedback1:"", username1:"", sex1:"", feedback2:"", username2:"", sex2:"", subtitle:"",  feedback3:"", username3:"", sex3:"", search_query:""]"
+    prompt = f"I want to create a ${idea}. Provide a title of website and 4 subtitle and their content for website. Also, provide 2 example user's simple feedbacks, usernames(real name) and sex(low case) about the website I built. And I want to get the images from api.unsplash.com. Provide the search query for this. And provide the subtitle, feedback and its username(real name) that encourage to join community.  Provide the result as following Json format: [title:"", subtitle1:"", subcontent1:"", subtitl2:"", subcontent2:"", subtitle3:"", subcontent3:"", subtitle4:"", subcontent4:"", feedback1:"", username1:"", sex1:"", feedback2:"", username2:"", sex2:"", subtitle:"",  feedback3:"", username3:"", sex3:"", search_query:""]"
 
     print('chatgpt starter>>>>>')
     response = openai.ChatCompletion.create(
