@@ -41,12 +41,14 @@ export const StyledBody = styled.div`
             color: #FFFFFF;
             display: flex;
             font-size: 28px;
+            text-align: center;
 
         }
     }
 
     div#container {
         height: 300px;
+        width: 90%;
 
         align-items: center;
         background: #F1F5F9;
@@ -54,7 +56,10 @@ export const StyledBody = styled.div`
         display: flex;
         justify-content: center;
         margin-top: 100px;
+        margin-right: auto;
+        margin-left: auto;
         padding: 20px;
+
 
         h1 {
             justify-content: center;

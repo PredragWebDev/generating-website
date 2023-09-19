@@ -18,22 +18,22 @@ export const StyledLogo = styled.div`
         margin-bottom: 30px;
     }
 
-    p#logo {
+    h1#logo {
         color: black;
         font-weight: 700;
-        font-size: 60px;
-        font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
-        line-height: 2rem;
+        font-size: 50px;
+        line-height: 1;
         margin: 0px;
+        text-align: center;
     }
 
     @media (max-width: 700px) {
-        p#logo {
+        h1#logo {
             color: black;
             font-weight: 700;
             font-size: 40px;
             font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
-            line-height: 2rem;
+            line-height: 1;
             margin: 0px;
         }
     }
@@ -309,7 +309,7 @@ export const StyledFeedBack = styled.div`
 
         h1 {
             font-weight: 600;
-            font-size: 28px;
+            font-size: 20px;
             text-align: center;
         }
     

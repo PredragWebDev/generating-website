@@ -15,6 +15,7 @@ export const Generated = (props) => {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const logo = Math.floor(Math.random * 4 + 1);
         
         switch (logo) {
@@ -55,7 +56,7 @@ export const Generated = (props) => {
                                         <img src={logo_url} alt="logo"/>
                                     </div>
                                     <div id="custom_title">
-                                        <p id="logo">{JSON.parse(props.content).title}</p>
+                                        <h1 id="logo">{JSON.parse(props.content).title}</h1>
                                     </div>
                                 </StyledLogo>
 

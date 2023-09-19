@@ -25,4 +25,14 @@ export const StyledLoading = styled.div`
         margin-left:20px;
     }
 
+    @media (max-width: 700px) {
+        h1 {
+        
+            margin: 0px;
+            margin-left:20px;
+            font-size: 30px;
+            text-align: center;
+        }   
+    }
+
 `;
