@@ -4,14 +4,16 @@ from flask_cors import CORS
 import requests
 import openai
 import json
-
-openai.api_key = "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"
-
+from dotenv import load_dotenv
+import os
 blueprint = Blueprint(
     'Content_blueprint',
     __name__,
     url_prefix=''
 )
+load_dotenv()
+
+openai.api_key = os.getenv("OPENAI_APIKEY");
 
 app = Flask(__name__)
 
@@ -60,7 +62,8 @@ def getResponseFrom_ChatGPT(idea):
 def getImage():
 
     data = request.json
-    access_key = 'q0nZ8A8yDOfd6pHYznzO-DegHgMKik3TIUnN6p9UQ0A'
+    # access_key = 'q0nZ8A8yDOfd6pHYznzO-DegHgMKik3TIUnN6p9UQ0A'
+    access_key = os.getenv('UNSPLASH_APIKEY')
     search_query = data['idea']  # Enter your desired search query here
     image_urls = []
 
